@@ -1,0 +1,5 @@
+{
+  "name": "Vault Voice - Secure Whistleblower Portal",
+  "description": "A secure and anonymous digital portal for whistleblowers, featuring end-to-end client-side encryption to protect user data and communications. Reports are submitted and followed up on using a session ID and passphrase, ensuring confidentiality.",
+  "requestFramePermissions": []
+}
