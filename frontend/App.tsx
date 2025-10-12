@@ -53,25 +53,27 @@ const Footer: React.FC = () => (
 
 
 function App() {
-  return <ReportsPage />;
   return (
     <HashRouter>
-        <div className="min-h-screen flex flex-col bg-brand-dark">
-            <Header />
-            <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
-                <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/submit" element={<SubmitPage />} />
-                    <Route path="/followup" element={<FollowupPage />} />
-                    <Route path="/investigator/login" element={<InvestigatorLoginPage />} />
-                    <Route path="/investigator/cases" element={<InvestigatorDashboardPage />} />
-                    <Route path="/investigator/cases/:caseId" element={<InvestigatorCasePage />} />
-                </Routes>
-            </main>
-            <Footer />
-        </div>
+      <div className="min-h-screen flex flex-col bg-brand-dark">
+        <Header />
+        <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
+
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/submit" element={<SubmitPage />} />
+            <Route path="/followup" element={<FollowupPage />} />
+            <Route path="/investigator/login" element={<InvestigatorLoginPage />} />
+            <Route path="/investigator/cases" element={<InvestigatorDashboardPage />} />
+            <Route path="/investigator/cases/:caseId" element={<InvestigatorCasePage />} />
+            <Route path="/reports" element={<ReportsPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </HashRouter>
   );
 }
 
 export default App;
+
