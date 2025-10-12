@@ -7,6 +7,11 @@ import FollowupPage from './pages/FollowupPage';
 import InvestigatorLoginPage from './pages/InvestigatorLoginPage';
 import InvestigatorDashboardPage from './pages/InvestigatorDashboardPage';
 import InvestigatorCasePage from './pages/InvestigatorCasePage';
+import ReportsPage from "./pages/ReportsPage";
+
+
+
+
 
 const Header: React.FC = () => {
     const location = useLocation();
@@ -48,6 +53,7 @@ const Footer: React.FC = () => (
 
 
 function App() {
+  return <ReportsPage />;
   return (
     <HashRouter>
         <div className="min-h-screen flex flex-col bg-brand-dark">
