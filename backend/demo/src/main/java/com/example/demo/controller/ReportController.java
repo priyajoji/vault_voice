@@ -11,17 +11,34 @@ import java.util.List;
 @RequestMapping("/api/report")
 public class ReportController {
 
+    private final ReportService service;
+
     @Autowired
-    private ReportService service;
+    public ReportController(ReportService service) {
+        this.service = service;
+    }
 
     @PostMapping
     public Report submitReport(@RequestBody Report report) {
-        return service.saveReport(report);
+             System.out.println("Received report submission: " + report);
+	    return service.saveReport(report);
     }
 
     @GetMapping
     public List<Report> getReports() {
-        return service.getAllReports();
+        List<Report> reports = service.getAllReports();
+
+        // Print current database state to backend console
+        System.out.println("=== Current Reports in Database ===");
+        reports.forEach(r ->
+            System.out.println("ID: " + r.getId() +
+                               " | Title: " + r.getTitle() +
+                               " | Description: " + r.getDescription() +
+                               " | Status: " + r.getStatus())
+        );
+        System.out.println("---------------------------------");
+
+        return reports; // ✅ return the same list
     }
 }
 

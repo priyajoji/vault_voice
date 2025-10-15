@@ -13,6 +13,8 @@ public class ReportService {
     private ReportRepository repository;
 
     public Report saveReport(Report report) {
+        // Ensure this is a new report, not an update
+        report.setId(null);
         return repository.save(report);
     }
 
@@ -20,3 +22,4 @@ public class ReportService {
         return repository.findAll();
     }
 }
+
